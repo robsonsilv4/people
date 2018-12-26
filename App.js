@@ -14,7 +14,7 @@ export default class App extends React.Component {
     ];
 
     textElements = names.map(name => {
-      return <Text>{name}</Text>;
+      return <Text key={name}>{name}</Text>;
     });
 
     return textElements;
