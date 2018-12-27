@@ -3,21 +3,17 @@ import { StyleSheet, Text, View } from "react-native";
 
 import Header from "./src/Components/Header";
 
+import axios from "axios";
+
 export default class App extends React.Component {
   renderList() {
-    const names = [
-      "Robson Silva",
-      "Gildard Mhn",
-      "Gabriel Lins",
-      "Max Wendel",
-      "Emerson Vieira"
-    ];
-
-    textElements = names.map(name => {
-      return <Text key={name}>{name}</Text>;
+    axios.get("https://randomuser.me/api/?nat=br&results=5").then(response => {
+      const { results } = response.data;
+      const names = results.map(people => people.name.first);
+      console.log(names);
     });
 
-    return textElements;
+    // return textElements;
   }
 
   render() {
