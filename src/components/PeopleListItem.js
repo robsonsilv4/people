@@ -26,12 +26,16 @@ const styles = StyleSheet.create({
     flexDirection: "row"
   },
   lineText: {
+    flex: 7,
     fontSize: 20,
     paddingLeft: 15
   },
   avatar: {
+    flex: 1,
     aspectRatio: 1,
-    width: 200
+    width: 200,
+    marginLeft: 15,
+    borderRadius: 50
   }
 });
 
