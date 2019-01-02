@@ -1,10 +1,14 @@
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import PeoplePage from "./src/pages/PeoplePage";
+import PeopleDetailPage from "./src/pages/PeopleDetailPage";
 
 const AppNavigator = createStackNavigator(
   {
     Main: {
       screen: PeoplePage
+    },
+    PeopleDetail: {
+      screen: PeopleDetailPage
     }
   },
   {
