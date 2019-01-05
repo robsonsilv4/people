@@ -9,7 +9,7 @@ const PeopleListItem = props => {
   return (
     <TouchableOpacity
       onPress={() => {
-        navigationToPeopleDetail();
+        navigationToPeopleDetail({ people });
       }}
     >
       <View style={styles.line}>
