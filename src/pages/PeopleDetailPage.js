@@ -62,7 +62,12 @@ export default class PeopleDetailPage extends React.Component {
     return (
       <View style={styles.container}>
         <Image source={{ uri: people.picture.large }} style={styles.avatar} />
-        <Text>Detalhes</Text>
+        <View style={styles.detailContainer}>
+          <View style={styles.line}>
+            <Text style={styles.cellLabel}>Email:</Text>
+            <Text style={styles.cellContent}>{people.email}</Text>
+          </View>
+        </View>
       </View>
     );
   }
@@ -74,5 +79,26 @@ const styles = StyleSheet.create({
   },
   avatar: {
     aspectRatio: 1
+  },
+  detailContainer: {
+    backgroundColor: "#e2f9ff",
+    marginTop: 20,
+    elevation: 1
+  },
+  line: {
+    flexDirection: "row",
+    paddingTop: 3,
+    paddingBottom: 3,
+    borderWidth: 1,
+    borderColor: "#c5c5c5"
+  },
+  cellLabel: {
+    fontSize: 18,
+    paddingLeft: 5,
+    fontWeight: "bold"
+  },
+  cellContent: {
+    fontSize: 18,
+    paddingLeft: 5
   }
 });
