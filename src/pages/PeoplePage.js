@@ -14,12 +14,14 @@ export default class PeoplePage extends React.Component {
   }
 
   componentDidMount() {
-    axios.get("https://randomuser.me/api/?nat=br&results=15").then(response => {
-      const { results } = response.data;
-      this.setState({
-        peoples: results
+    axios
+      .get("https://randomuser.me/api/?nat=br&results=150")
+      .then(response => {
+        const { results } = response.data;
+        this.setState({
+          peoples: results
+        });
       });
-    });
   }
 
   render() {
