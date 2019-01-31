@@ -27,7 +27,7 @@ export default class PeoplePage extends React.Component {
             loading: false
           });
         });
-    }, 1500);
+    }, 3500);
   }
 
   // renderLoading() {
@@ -39,17 +39,25 @@ export default class PeoplePage extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         {this.state.loading ? (
           <ActivityIndicator size="large" color="#6ca2f7" />
-        ) : null}
-        <PeopleList
-          peoples={this.state.peoples}
-          onPressItem={pageParams => {
-            this.props.navigation.navigate("PeopleDetail", pageParams);
-          }}
-        />
+        ) : (
+          <PeopleList
+            peoples={this.state.peoples}
+            onPressItem={pageParams => {
+              this.props.navigation.navigate("PeopleDetail", pageParams);
+            }}
+          />
+        )}
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center"
+  }
+});
