@@ -30,10 +30,19 @@ export default class PeoplePage extends React.Component {
     }, 1500);
   }
 
+  // renderLoading() {
+  //   if (this.state.loading)
+  //     return <ActivityIndicator size="large" color="#6ca2f7" />;
+
+  //   return null;
+  // }
+
   render() {
     return (
       <View>
-        <ActivityIndicator size="large" color="#6ca2f7" />
+        {this.state.loading ? (
+          <ActivityIndicator size="large" color="#6ca2f7" />
+        ) : null}
         <PeopleList
           peoples={this.state.peoples}
           onPressItem={pageParams => {
