@@ -64,7 +64,7 @@ export default class PeopleDetailPage extends React.Component {
         <Image source={{ uri: people.picture.large }} style={styles.avatar} />
         <View style={styles.detailContainer}>
           <View style={styles.line}>
-            <Text style={styles.cellLabel}>Email:</Text>
+            <Text style={[styles.cellLabel, styles.label]}>Email:</Text>
             <Text style={styles.cellContent}>{people.email}</Text>
           </View>
         </View>
@@ -92,12 +92,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#c5c5c5"
   },
-  cellLabel: {
-    fontSize: 18,
-    paddingLeft: 5,
+  label: {
     fontWeight: "bold"
   },
-  cellContent: {
+  cell: {
     fontSize: 18,
     paddingLeft: 5
   }
