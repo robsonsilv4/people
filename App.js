@@ -1,8 +1,9 @@
-import { createStackNavigator, createAppContainer } from "react-navigation";
+import { createAppContainer, createStackNavigator } from "react-navigation";
+
 import PeoplePage from "./src/pages/PeoplePage";
 import PeopleDetailPage from "./src/pages/PeopleDetailPage";
 
-import capitalizeFirstLetter from "./src/utils";
+import { capitalizeFirstLetter } from "./src/utils";
 
 const AppNavigator = createStackNavigator(
   {
@@ -13,11 +14,8 @@ const AppNavigator = createStackNavigator(
       screen: PeopleDetailPage,
       navigationOptions: ({ navigation }) => {
         const peopleName = capitalizeFirstLetter(
-          navigation.state.params().pessoa.name.first
+          navigation.state.params.people.name.first
         );
-        // const peopleName = capitalizeFirstLetter(
-        //   navigation.state.params.people.name.first
-        // );
 
         return {
           title: peopleName,
@@ -36,16 +34,18 @@ const AppNavigator = createStackNavigator(
       headerStyle: {
         backgroundColor: "#6ca2f7",
         borderBottomWidth: 1,
-        borderBottomColor: "#c5c5c5"
+        borderBottomColor: "#C5C5C5"
       },
       headerTitleStyle: {
         color: "white",
         fontSize: 30,
-        textAlign: "center",
-        flexGrow: 1
+        flexGrow: 1,
+        textAlign: "center"
       }
     }
   }
 );
 
-export default createAppContainer(AppNavigator);
+const AppContainer = createAppContainer(AppNavigator);
+
+export default AppContainer;
